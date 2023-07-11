@@ -125,3 +125,11 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+#Projeto de cypress
+.DS_Store
+cypress.env.json
+cypress/downloads/
+cypress/screenshots/
+cypress/videos/
+node_modules/
