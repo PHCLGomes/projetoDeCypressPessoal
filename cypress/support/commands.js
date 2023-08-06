@@ -1,3 +1,5 @@
+require('cypress-xpath')
+
 Cypress.Commands.add('fillSignupFormAndSubmit', (email, password) => {
 	cy.intercept('GET', '**/notes').as('getNotes')
 	cy.visit('/signup')
@@ -89,7 +91,8 @@ Cypress.Commands.add('deleteNote', note => {
 Cypress.Commands.add('fillSettingsFormAndSubmit', () => {
 	cy.visit('/settings')
 	cy.get('#storage').type('1')
-	cy.get('#name').type('Mary Doe')
+	//cy.get('#name').type('Mary Doe')
+	cy.xpath('//*[@id="name"]').type('Mary Doe')
 	cy.iframe('.card-field iframe')
 		.as('iframe')
 		.find('[name="cardnumber"]')

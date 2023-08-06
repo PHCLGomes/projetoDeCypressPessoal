@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 // ***********************************************************
 // This example support/e2e.js is processed and
 // loaded automatically before your test files.
@@ -20,3 +21,18 @@ import 'cypress-iframe'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+Cypress.SelectorPlayground.defaults({
+	selectorPriority: 
+    [
+    	'id', 
+    	'class',   
+    	'attributes',
+    	'tag',
+    	'data-testid',
+    	'data-test',
+    	'data-cy',
+    	'data-qa',
+    	'nth-child'
+    ],
+})
