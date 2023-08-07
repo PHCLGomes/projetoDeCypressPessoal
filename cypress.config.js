@@ -7,8 +7,9 @@ module.exports = defineConfig({
 		defaultCommandTimeout: 15000,
 		requestTimeout: 10000,
 		chromeWebSecurity: false,
-		setupNodeEvents() {
-			// implement node event listeners here
+		setupNodeEvents(on, config) {
+			require('@cypress/grep/src/plugin')(config)
+			return config
 		},	
 	},
 	projectId: '48vhv2',
